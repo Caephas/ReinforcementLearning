@@ -1,7 +1,7 @@
 import numpy as np
 
 class Perceptron:
-    def __init__(self, input_size, learning_rate=0.1,epochs=10):
+    def __init__(self, input_size:int, learning_rate:float=0.1,epochs:int=10):
         self.weights = np.random.rand(input_size)
         self.bias = np.random.rand()
         self.learning_rate = learning_rate
@@ -50,3 +50,19 @@ class Perceptron:
 # Summation Function: Computes weighted sum of inputs
 #  Activation Function: Uses a step function for binary classification
 #  Output: Final predicted class (0 or 1)
+
+# Example Dataset (AND logic gate)
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Input features
+y = np.array([0, 0, 0, 1])  # Expected output (AND logic gate)
+
+# Initialize and train the perceptron
+perceptron = Perceptron(input_size=2, learning_rate=0.1, epochs=10)
+perceptron.train(X, y)
+
+# Make predictions on new data
+test_data = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+predictions = perceptron.predict(test_data)
+
+print("\nFinal Predictions:")
+for i in range(len(test_data)):
+    print(f"Input: {test_data[i]}, Predicted Output: {predictions[i]}")
