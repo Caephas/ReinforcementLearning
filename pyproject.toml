@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "reinforcementlearning"
+version = "0.1.0"
+description = ""
+authors = ["Caephas <arinzeobidiegwu@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+ale-py = "^0.8.1"  # Adjusted to work with ptan and gymnasium
+gymnasium = "^0.29.0"  # Compatible with ptan and gym
+ptan = "0.8"  # Keep at the current version as it's required
+opencv-python = "^4.8.0"  # Updated to the latest stable version
+scipy = "^1.11.3"  # Updated to the latest stable version
+torch = "^2.1.0"  # Updated to the latest stable version
+torchvision = "^0.18.1"  # Matches the compatible torch version
+tensorboard = "^2.13.0"  # Updated to align with TensorFlow version
+tensorflow = "^2.13.0"  # Updated to the latest stable version
+box2d = "^2.3.10"
+numpy = "1.26.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
