@@ -1,5 +1,15 @@
 import numpy as np
 
+"""
+    1.	Define XOR input and output data (X and y).
+	2.	Initialize weights and biases randomly.
+	3.	Train the network using Backpropagation:
+        •	Compute forward pass using Sigmoid activation.
+        •	Calculate error.
+        •	Compute gradients using derivatives.
+        •	Update weights using gradient descent.
+	4.	Test the trained model and print predictions.
+"""
 #Sigmoid activation function
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
@@ -70,3 +80,9 @@ for i in range(len(X)):
     final_input = np.dot(hidden_output, W2) + b2
     final_output = sigmoid(final_input)
     print(f"Input: {X[i]} -> Prediction: {final_output[0][0]:.4f}")
+
+"""
+A single-layer perceptron CANNOT solve XOR because XOR is non-linearly separable.
+An MLP with a hidden layer solves XOR using non-linear activations (Sigmoid).
+Backpropagation adjusts weights to minimize error over time.
+"""
